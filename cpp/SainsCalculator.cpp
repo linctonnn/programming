@@ -1,6 +1,6 @@
-# include <iostream>
-# include <vector>
-# include <cmath>
+#include <iostream>
+#include <vector>
+#include <cmath>
 using namespace std;
 
 int main() {
@@ -9,15 +9,15 @@ int main() {
     double num, res, exp;
     char moreInput;
 
-    cout << "Masukkan operasi yang ingin dilaukan (+, -, *, /, sin, cos, log, sqrt, pangkat): ";
+    cout << "Masukkan operasi yang ingin dilakukan (+, -, *, /, sin, cos, log, sqrt, pangkat): ";
     cin >> op;
 
     if (op == "sin" || op == "cos" || op == "log" || op == "sqrt" || op == "pangkat") {
-        cout << "Masukkan Angka";
+        cout << "Masukkan Angka: ";
         cin >> num;
     } else {
         do {
-            cout << "Masukkan Angka";
+            cout << "Masukkan Angka: ";
             cin >> num;
             nums.push_back(num);
 
@@ -27,18 +27,22 @@ int main() {
     }
 
     if (op == "+") {
+        res = nums[0];
         for (size_t i = 1; i < nums.size(); ++i) {
             res += nums[i];
         }
     } else if (op == "-") {
+        res = nums[0];
         for (size_t i = 1; i < nums.size(); ++i) {
             res -= nums[i];
         }
     } else if (op == "*") {
+        res = nums[0];
         for (size_t i = 1; i < nums.size(); ++i) {
-            res += nums[i];
+            res *= nums[i];
         }
     } else if (op == "/") {
+        res = nums[0];
         for (size_t i = 1; i < nums.size(); ++i) {
             if (nums[i] == 0) {
                 cout << "Error: Pembagian dengan angka 0 tidak diijinkan" << endl;
@@ -57,10 +61,11 @@ int main() {
     } else if (op == "cos") {
         res = cos(num);
     } else if (op == "sqrt") {
-        if (num == 0) {
-            cout << "Error: Akar tidak bisa untuk angka negatif" << endl;
+        if (num < 0) {
+            cout << "Error: Akar kuadrat tidak bisa untuk angka negatif" << endl;
             return 1;
         }
+        res = sqrt(num);
     } else if (op == "pangkat") {
         cout << "Masukkan eksponen: ";
         cin >> exp;
@@ -74,3 +79,4 @@ int main() {
 
     return 0;
 }
+
