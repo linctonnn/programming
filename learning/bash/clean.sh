@@ -4,6 +4,9 @@ clean_env() {
     echo "Cleaning apt cache..."
     sudo apt-get clean
 
+    echo "Cleaning history bash"
+    sudo history -c -y
+
     echo "Removing unused dependencies..."
     sudo apt-get autoremove
 
