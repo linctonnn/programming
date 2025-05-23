@@ -1,5 +1,7 @@
 import cv2 as cv
+import numpy as np
 
+blank = np.zeros((500, 500, 3), dtype = 'uint8')
 read_videos = cv.VideoCapture(0)
 
 def rescaleFrame(frame, scale = 0.75):
@@ -18,13 +20,14 @@ changeRes(1980, 1080)
 
 while True:
     isTrue, frame = read_videos.read()
+    if not isTrue:
+        break
+
     frame_resized = rescaleFrame(frame)
-    
-    cv.imshow('Camera Open', frame_resized)
+    cv.imshow('Open Camera', frame_resized)
 
     if cv.waitKey(20) & 0xFF == ord('d'):
         break
-
 
 read_videos.release()
 cv.destroyAllWindows()
