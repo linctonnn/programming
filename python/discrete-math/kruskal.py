@@ -52,16 +52,17 @@ class Graph:
 
 
 if __name__ == '__main__':
-    g = Graph(6)  # 6 vertices
-    g.add_edge(0, 1, 10)  # 1-2
-    g.add_edge(0, 3, 30)  # 1-4
-    g.add_edge(0, 4, 45)  # 1-5
-    g.add_edge(1, 2, 50)  # 2-3
-    g.add_edge(1, 4, 40)  # 2-5
-    g.add_edge(1, 5, 25)  # 2-6
-    g.add_edge(2, 4, 35)  # 3-5
-    g.add_edge(2, 5, 15)  # 3-6
-    g.add_edge(3, 5, 20)  # 4-6
-    g.add_edge(4, 5, 55)  # 5-6
-
+    # A=0, B=1, C=2, D=3, E=4, F=5, G=6
+    g = Graph(7)  # 7 vertices
+    g.add_edge(0, 1, 7) 
+    g.add_edge(0, 3, 5)
+    g.add_edge(1, 2, 8)
+    g.add_edge(1, 3, 9)
+    g.add_edge(1, 4, 7)
+    g.add_edge(2, 4, 5)
+    g.add_edge(3, 4, 15)
+    g.add_edge(3, 5, 6)
+    g.add_edge(4, 5, 8)
+    g.add_edge(4, 6, 9)
+    g.add_edge(4, 6, 11)
     g.KruskalMST()
