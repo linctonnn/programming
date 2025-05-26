@@ -1,5 +1,5 @@
-from googleapiclient.discovery import build
 import os
+from googleapiclient.discovery import build
 
 def l_env(filepath=".env"):
     with open(filepath) as f:
@@ -28,8 +28,8 @@ channel_id = search_response['items'][0]['snippet']['channelId']
 print("Channel ID: ", channel_id)
 
 req = yt.channels().list(
-        part = "statistics",
-        id = channel_id
+            part = "statisitcs",
+            id = channel_id
         )
 
 pl_req = yt.playlists().list(
@@ -41,6 +41,8 @@ pl_req = yt.playlists().list(
 res_pl = pl_req.execute()
 res_ch = req.execute()
 
-for item in res_pl['items']:
-    print(item)
-    print()
+print(res_ch)
+print(res_ch)
+
+
+
