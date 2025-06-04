@@ -1,0 +1,63 @@
+Contoh : 
+Kita punya tabel orang
+ada id(int4), nama(varchar)
+1, Sepuh
+2, Nexus
+3, Teri
+
+terus ada tabel pesanan
+ada id(int4), orang_id(int4), item(varchar)
+101, 1, Terigu
+102, 1, Rumah
+103, 2, Kain
+
+Penjelasan :
+* Inner Join : Menampilkan yang hanya ada di kedua tabel
+* Left Join : Tampilkan semua orang, bahkan yang gak pesan
+* Right Join : Tampilkan semua pesanan bahkan jika tidak ada orangnya
+* Full Join : Tampilkan semua Orang dan semua Pesanan
+* Cross Join : Gabungkan setiap orang dengan setiap pesanan
+* Self Join : Bandingkan tabel dengan dirinya sendiri
+
+nah kalo kita terapin inner join : (yang ada di kedua tabel)
+sepuh, terigu
+sepuh, rumah
+nexus, kain
+
+nah kalo kiat terapin left join : (Menampilkan semua orang bahkan yang gak pesen sekalipun)
+sepuh, terigu
+sepuh, rumah
+nexus, NULL
+teri, kain
+
+lanjut ke right join : (Menampilkan semua pesanan bahkan jika tidak ada orangnya)
+sepuh, terigu
+sepuh, rumah
+nexus, kain
+
+Hasil sama karena semua pesanan punya `orang`
+
+lanjut ke full join : (tampilkan semua orang dan semua pesanan) gabungan left + right sih ini
+sepuh, terigu
+sepuh, rumah
+nexus, kain
+
+lanjut ke cross join : (semua kombinasi)
+
+sepuh, terigu
+sepuh, rumah
+sepuh, kain
+
+nexus, terigu
+nexus, rumah
+nexus, kain
+
+teri, terigu
+teri, rumah
+teri, kain
+
+total ada 9 karena 3 x 3 ygy
+
+terakhir self join : (membandingkan dengan dirinya sendiri)
+
+ni gw gak paham tanya @
